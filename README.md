@@ -1,2 +1,2 @@
 # Curso-TypeScript
-Repositório de pequenas atividades de type script
+Repository of small activities related to the type script course
