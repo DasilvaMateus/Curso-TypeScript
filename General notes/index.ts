@@ -33,3 +33,40 @@ function showNumbers(a: number, b: number, c?:number){
     console.log("C" + c)
 }
 showNumbers(4,5) //This was made possible by the optional em type of 'C'
+
+//Validating optional argument
+function advancedGreeting(firstName:string, lastName?:string ){
+    if(lastName !== undefined){
+       return console.log(`Hello ${firstName} ${lastName} how is it going?`)
+    }
+   return console.log(`Hello ${firstName}  how is it going?`)
+}
+
+//Union types
+function showBalance(balance:string | number){
+    console.log(`The account balance is $ ${balance}`)
+}
+
+//Validating using union types
+function showUserRole(role:boolean | string){
+    if(typeof role === 'boolean'){
+        return 'Unapproved user'
+    }
+    return `The user role is: ${role}`
+}
+
+//Type alias
+function showId(id: string | number){
+    console.log(`The id is ${id}`)
+}
+
+//Interface
+interface Point{
+    x:number
+    y:number
+    z:number
+}
+
+function showCords(obj:Point){
+    console.log(`X:${obj.x} Y:${obj.y} Z:${obj.z}`)
+}
