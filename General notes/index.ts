@@ -70,3 +70,12 @@ interface Point{
 function showCords(obj:Point){
     console.log(`X:${obj.x} Y:${obj.y} Z:${obj.z}`)
 }
+
+//Interface x alias
+interface Person{
+    name:string
+}
+
+interface Person{
+    age:number  //During this move the interface content was not overwritten
+}
