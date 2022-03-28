@@ -79,3 +79,21 @@ interface Person{
 interface Person{
     age:number  //During this move the interface content was not overwritten
 }
+
+//Literal types
+function showDirection(direction: 'left'|'right'|'center'){
+    console.log(`The direction is :${direction}`)
+}
+showDirection('left')
+
+//Non  null assertion operators
+const p = document.getElementById('element')
+console.log(p!.innerText)
+
+//Big int (ES2020)
+let n :bigint
+n = 1000n
+console.log(n + 100n)
+
+//Symbol (ES2020)
+let symbolA:symbol = Symbol('a')
