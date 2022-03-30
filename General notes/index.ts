@@ -97,3 +97,59 @@ console.log(n + 100n)
 
 //Symbol (ES2020)
 let symbolA:symbol = Symbol('a')
+
+//Type guard
+function guardSum(a:number | string, b:number |string){
+    if(typeof a === 'string' && typeof b ==="string"){
+        console.log(parseFloat(a) + parseFloat(b))
+    } else if(typeof a === 'number' && typeof b ==="number"){
+        console.log(a+b)
+    }
+}
+
+//Instance of
+class User{
+    name
+
+    constructor(name:string){
+        this.name = name
+    }
+}
+class SuperUser extends User{
+     constructor(name:string){
+         super(name)
+     }
+}
+
+const jhon = new User('jonh')
+const paul = new SuperUser('paul')
+
+function userGreeting(user:object){
+    if(user instanceof SuperUser){
+        console.log(`Hello ${user.name},start the self destruction sequence?`)
+    }else if(user instanceof User){
+        console.log(`Hello ${user.name},start the ice cream machine?`)
+    }
+}
+
+//In operator
+class Dog{
+    name
+    breed
+
+    constructor(name:string, breed?:string){
+        this.name=name
+        if(breed){
+            this.breed = breed
+        }
+    }
+}
+
+const turca = new Dog('Turca')
+const bob = new Dog('Bob','Poodle')
+
+function showDogDetails(dog:Dog){
+    if('breed' in dog){
+        console.log(`The dog breed is ${dog.breed}`)
+    }
+}
