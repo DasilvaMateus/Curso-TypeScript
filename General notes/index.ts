@@ -153,3 +153,38 @@ function showDogDetails(dog:Dog){
         console.log(`The dog breed is ${dog.breed}`)
     }
 }
+
+//Void
+function withoutReturn():void {
+    console.log('no return')
+}
+
+//Callback as args
+function otherGreeting(name:string) {
+    return `Hello ${name}`
+    
+}
+function greetingAgain(f:(name:string)=>string,userName:string) {
+    console.log("Greeting again")
+}
+greetingAgain(greeting,"Matesus")
+
+//Generic function
+function firstElement<T>(arr: T[]):T {
+    return arr[0]
+}
+console.log(firstElement([1,2,3]))
+console.log(firstElement(["a","b","c"]))
+console.log(firstElement('Hello')) //Not allowed, in view of the typing
+
+//Constraints
+function biggestNumber<T extends number | string>(a:T, b:T) {
+    let biggest:T
+
+    if (+a > +b) {
+        biggest=a
+    } else {
+        biggest=b
+    }
+    return biggest
+}
