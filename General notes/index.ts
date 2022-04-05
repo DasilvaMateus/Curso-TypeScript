@@ -188,3 +188,8 @@ function biggestNumber<T extends number | string>(a:T, b:T) {
     }
     return biggest
 }
+
+//Destructuring as param
+function showProductDetails({name, price}: {name:string, price:number}){
+    console.log(`The product name is ${name} and the price is ${price}`)
+}
