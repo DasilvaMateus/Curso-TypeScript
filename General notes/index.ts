@@ -193,3 +193,28 @@ function biggestNumber<T extends number | string>(a:T, b:T) {
 function showProductDetails({name, price}: {name:string, price:number}){
     console.log(`The product name is ${name} and the price is ${price}`)
 }
+
+//Interfaces...
+interface Product{
+    name:string
+    price:number
+    isAvaliable:true
+}
+function showProductDetailsII(product:Product){
+    console.log(`The product name is ${product.name} and the price is ${product.price}`)
+    if(product.isAvaliable){
+        console.log(`The product is available`)
+    }
+}
+
+//Optional properties
+interface User{
+    email:string
+    role?:string
+}
+function showUserDetailsIII(user:User){
+    console.log(`The user email is ${user.email}`)
+    if(user.role){
+        console.log(`The user role is ${user.role}`)
+    }
+}
