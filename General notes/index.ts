@@ -218,3 +218,30 @@ function showUserDetailsIII(user:User){
         console.log(`The user role is ${user.role}`)
     }
 }
+
+//Type parameters
+function getSomeKey<T, K extends keyof T>(object: T, key: K){
+    return `The key ${key} its in object and his value is ${object[key]}`;
+}
+const sever={
+    hd:'2TB',
+    ram:'32GB'
+}
+
+console.log(getSomeKey(sever,'ram'))
+
+//Keyof type operator
+type Character = {name:string, age:number, hasDriverLicense:boolean}
+type X = keyof Character
+
+function showCarName(obj:Character,name:X):string{
+    return `${obj[name]}`
+}
+
+const myChar:Character ={
+    name:"Mateus",
+    age:30,
+    hasDriverLicense:true
+}
+
+console.log(showCarName(myChar,'name'))
