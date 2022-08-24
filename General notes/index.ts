@@ -245,3 +245,38 @@ const myChar:Character ={
 }
 
 console.log(showCarName(myChar,'name'))
+
+//Class fields
+class Cat{
+    name!:string
+    age!:number
+}
+
+const garfield= new Cat()
+garfield.name='Garfield'
+garfield.job='Sleep' //Not allowed, in view of type
+
+//Class readonly
+class Doggy {
+    name!:string
+    readonly age = 12
+}
+
+//Heritage and super
+class Machine{
+    name!:string
+    constructor(name:string) {
+        this.name = name
+    }
+}
+
+const trator = new Machine("Trator")
+
+class KillerMachine extends Machine {
+    guns:string
+
+    constructor(name:string, guns:string) {
+        super(name)
+        this.guns = guns
+    }
+}
