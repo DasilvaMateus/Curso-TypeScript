@@ -296,6 +296,7 @@ function myDecorator(){
 }
 
 class myClass{
+    name!:string
     @myDecorator()
     testing(){
         console.log('Method execution')
