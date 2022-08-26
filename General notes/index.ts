@@ -280,3 +280,24 @@ class KillerMachine extends Machine {
         this.guns = guns
     }
 }
+
+//Decorators
+
+function myDecorator(){
+    return function(
+        target:any,
+        propertyKey:string,
+        descriptor: PropertyDescriptor
+    ){
+        console.log('Executing decorator')
+        console.log(propertyKey)
+        console.log(descriptor)
+    }
+}
+
+class myClass{
+    @myDecorator()
+    testing(){
+        console.log('Method execution')
+    }
+}
